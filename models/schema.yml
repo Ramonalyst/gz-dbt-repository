@@ -1,12 +1,12 @@
 version: 2
 
 sources:
-    - name: gz_raw_data AS raw
+    - name: gz_raw_data
       description: "greenweez raw data"
       tables:
-          - name: raw_gz_sales AS sales
+          - name: raw_gz_sales
             description: "raw order, sales data"
-          - name: raw_gz_product AS product
+          - name: raw_gz_product
             description: "products and purchase price"
-          - name: raw_gz_ship AS ship
+          - name: raw_gz_ship
             description: "ship and log cost by order id"  
