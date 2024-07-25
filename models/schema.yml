@@ -1,12 +1,16 @@
 version: 2
 
 sources:
-    - name: gz_raw_data
-      description: "greenweez raw data"
-      tables:
-        - name: raw_gz_sales
-          description: "raw order, sales data"
-        - name: raw_gz_product
-          description: "products and purchase price"
-        - name: raw_gz_ship
-          description: "ship and log cost by order id"  
+  - name: raw
+    schema: gz_raw_data  # This is the dataset name in BigQuery
+    tables:
+      - name: sales
+        identifier: raw_gz_sales
+        description: "Raw sales data"
+      - name: product
+        identifier: raw_gz_product
+        description: "Raw product data"
+      - name: ship
+        identifier: raw_gz_ship
+        description: "Raw shipment data"
+
