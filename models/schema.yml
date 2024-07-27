@@ -17,7 +17,6 @@ sources:
           tests:
             - unique:
                 column_name: "(orders_id || '-' || pdt_id)"
-            
           - name: revenue
           description: revenue = quantity * selling price
           - name: quantity
@@ -31,7 +30,6 @@ sources:
           tests:
             - unique:
             - not_null:
-                
           - name: purchase_price
           description: purchase price of the product
       - name: ship
@@ -43,7 +41,6 @@ sources:
           tests:
             - unique:
             - not_null:
-                
           - name: shipping_fee
           description: price for shipment of this order
           - name: log_cost
