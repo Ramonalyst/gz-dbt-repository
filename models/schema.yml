@@ -9,41 +9,41 @@ sources:
         description: Raw sales data
         columns:
           - name: date_date
-          description: date of purchase
+            description: date of purchase
           - name: orders_id
-          description: foreign key to ship
+            description: foreign key to ship
           - name: pdt_id
-          description: foreign key to product
-          tests:
-            - unique:
-                column_name: "(orders_id || '-' || pdt_id)"
+            description: foreign key to product
+            tests:
+              - unique:
+                  column_name: "(orders_id || '-' || pdt_id)"
           - name: revenue
-          description: revenue = quantity * selling price
+            description: revenue = quantity * selling price
           - name: quantity
-          description: quantity of purchased products for this order
+            description: quantity of purchased products for this order
       - name: product
         identifier: raw_gz_product
         description: Raw product data
         columns:
           - name: products_id
-          description: primary key
-          tests:
-            - unique:
-            - not_null:
+            description: primary key
+            tests:
+              - unique
+              - not_null
           - name: purchase_price
-          description: purchase price of the product
+            description: purchase price of the product
       - name: ship
         identifier: raw_gz_ship
         description: Raw shipment data
         columns:
           - name: orders_id
-          description: primary key
-          tests:
-            - unique:
-            - not_null:
+            description: primary key
+            tests:
+              - unique
+              - not_null
           - name: shipping_fee
-          description: price for shipment of this order
+            description: price for shipment of this order
           - name: log_cost
-          description: cost of preparing the parcel in the warehouse
+            description: cost of preparing the parcel in the warehouse
           - name: ship_cost
-          description: the shipping cost paid to the carrier/transporter
+            description: the shipping cost paid to the carrier/transporter
