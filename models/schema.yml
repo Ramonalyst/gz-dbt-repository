@@ -14,13 +14,13 @@ sources:
             description: foreign key to ship
           - name: pdt_id
             description: foreign key to product
-            tests:
-              - unique:
-                  column_name: "(orders_id || '-' || pdt_id)"
           - name: revenue
             description: revenue = quantity * selling price
           - name: quantity
             description: quantity of purchased products for this order
+        tests:
+          - unique:
+              column_name: "(orders_id || '-' || pdt_id)"
       - name: product
         identifier: raw_gz_product
         description: Raw product data
