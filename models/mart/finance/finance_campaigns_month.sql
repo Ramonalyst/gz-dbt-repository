@@ -8,8 +8,6 @@ SELECT
   SUM(ads_clicks) AS ads_clicks,
   SUM(revenue) AS revenue,
   SUM(margin) AS margin,
-FROM {{ ref('int_campaigns_day') }}
-FULL OUTER JOIN {{ ref('finance_days') }} 
-  USING (date_date)
+FROM {{ ref('finance_campaigns_day') }}
 GROUP BY datemonth
 ORDER BY datemonth DESC
