@@ -47,3 +47,72 @@ sources:
             description: cost of preparing the parcel in the warehouse
           - name: ship_cost
             description: the shipping cost paid to the carrier/transporter
+      - name: adwords
+        identifier: raw_gz_adwords
+        columns:
+          - name: date_date
+            description: date when the campaign data was recorded 
+          - name: paid_source
+            description: the advertising platform or source from which the paid campaign originated 
+          - name: campaign_key
+            description: a unique identifier for the campaign
+          - name: camPGN_name
+            description: the name of the campaign, detailing its specific focus or target
+          - name: ads_cost
+            description: total cost incurred for advertisements on that specific date
+          - name: impression
+            description: number of times the advertisement was displayed or seen by users
+          - name: click
+            description: number of times users clicked on the advertisement
+      - name: bing
+        identifier: raw_gz_bing
+        columns:
+          - name: date_date
+            description: date when the campaign data was recorded 
+          - name: paid_source
+            description: the advertising platform or source from which the paid campaign originated 
+          - name: campaign_key
+            description: a unique identifier for the campaign
+          - name: camPGN_name
+            description: the name of the campaign, detailing its specific focus or target
+          - name: ads_cost
+            description: total cost incurred for advertisements on that specific date
+          - name: impression
+            description: number of times the advertisement was displayed or seen by users
+          - name: click
+            description: number of times users clicked on the advertisement  
+      - name: criteo
+        identifier: raw_gz_criteo
+        columns:
+          - name: date_date
+            description: date when the campaign data was recorded 
+          - name: paid_source
+            description: the advertising platform or source from which the paid campaign originated 
+          - name: campaign_key
+            description: a unique identifier for the campaign
+          - name: camPGN_name
+            description: the name of the campaign, detailing its specific focus or target
+          - name: ads_cost
+            description: total cost incurred for advertisements on that specific date
+          - name: impression
+            description: number of times the advertisement was displayed or seen by users
+          - name: click
+            description: number of times users clicked on the advertisement
+      - name: facebook
+        identifier: raw_gz_facebook
+        columns:
+          - name: date_date
+            description: date when the campaign data was recorded 
+          - name: paid_source
+            description: the advertising platform or source from which the paid campaign originated 
+          - name: campaign_key
+            description: a unique identifier for the campaign
+          - name: camPGN_name
+            description: the name of the campaign, detailing its specific focus or target
+          - name: ads_cost
+            description: total cost incurred for advertisements on that specific date
+          - name: impression
+            description: number of times the advertisement was displayed or seen by users
+          - name: click
+            description: number of times users clicked on the advertisement
+  
