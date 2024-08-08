@@ -47,3 +47,105 @@ sources:
             description: cost of preparing the parcel in the warehouse
           - name: ship_cost
             description: the shipping cost paid to the carrier/transporter
+      - name: adwords
+        identifier: raw_gz_adwords
+        columns:
+          - name: date_date
+            description: date when the campaign data was recorded 
+          - name: paid_source
+            description: the advertising platform or source from which the paid campaign originated 
+          - name: campaign_key
+            description: a unique identifier for the campaign
+          - name: camPGN_name
+            description: the name of the campaign, detailing its specific focus or target
+          - name: ads_cost
+            description: total cost incurred for advertisements on that specific date
+          - name: impression
+            description: number of times the advertisement was displayed or seen by users
+          - name: click
+            description: number of times users clicked on the advertisement
+      - name: bing
+        identifier: raw_gz_bing
+        columns:
+          - name: date_date
+            description: date when the campaign data was recorded 
+          - name: paid_source
+            description: the advertising platform or source from which the paid campaign originated 
+          - name: campaign_key
+            description: a unique identifier for the campaign
+          - name: camPGN_name
+            description: the name of the campaign, detailing its specific focus or target
+          - name: ads_cost
+            description: total cost incurred for advertisements on that specific date
+          - name: impression
+            description: number of times the advertisement was displayed or seen by users
+          - name: click
+            description: number of times users clicked on the advertisement  
+      - name: criteo
+        identifier: raw_gz_criteo
+        columns:
+          - name: date_date
+            description: date when the campaign data was recorded 
+          - name: paid_source
+            description: the advertising platform or source from which the paid campaign originated 
+          - name: campaign_key
+            description: a unique identifier for the campaign
+          - name: camPGN_name
+            description: the name of the campaign, detailing its specific focus or target
+          - name: ads_cost
+            description: total cost incurred for advertisements on that specific date
+          - name: impression
+            description: number of times the advertisement was displayed or seen by users
+          - name: click
+            description: number of times users clicked on the advertisement
+      - name: facebook
+        identifier: raw_gz_facebook
+        columns:
+          - name: date_date
+            description: date when the campaign data was recorded 
+          - name: paid_source
+            description: the advertising platform or source from which the paid campaign originated 
+          - name: campaign_key
+            description: a unique identifier for the campaign
+          - name: camPGN_name
+            description: the name of the campaign, detailing its specific focus or target
+          - name: ads_cost
+            description: total cost incurred for advertisements on that specific date
+          - name: impression
+            description: number of times the advertisement was displayed or seen by users
+          - name: click
+            description: number of times users clicked on the advertisement
+
+models:
+  - name: int_campaigns
+    description: data from all campaigns
+    tests:
+      - unique:
+          column_name: "(campaign_key || '-' || date_date)"
+    
+  - name: int_campaigns_day
+    description: aggregated version of int_campaigns model for each day
+    tests:
+      - unique:
+          column_name: "(campaign_key || '-' || date_date)"
+
+  - name: finance_campaigns_day
+    description: global kpi
+    columns:
+      - name: ads_margin
+        description: operational_margin - ads_cost
+      - name: average_basket
+        description: average basket cost for each day 
+      - name: operational_margin
+        description: sum of operational margin for each day
+      - name: ads_cost
+        description: sum of ads cost for each day
+      - name: ads_impression
+        description: sum of impressions for each day
+      - name: ads_clicks
+        description: sum of clicks for each day
+      - name: revenue
+        description: sum of revenue for each day
+      - name: margin
+        description: sum of margin for each day
+          
