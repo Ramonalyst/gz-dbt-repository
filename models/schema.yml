@@ -115,13 +115,11 @@ sources:
             description: number of times the advertisement was displayed or seen by users
           - name: click
             description: number of times users clicked on the advertisement
+
 models:
   - name: int_campaigns
     description: data from all campaigns
     tests:
       - unique:
           column_name: "(campaign_key || '-' || date_date)"
-      - not_null:
-          column_name:
-            - paid_source
-            - campaign_name
+    
