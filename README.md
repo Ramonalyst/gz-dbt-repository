@@ -53,7 +53,7 @@ Located in `models/mart/finance/`:
 dbt project config is in `dbt_project.yml`.
 
 Key settings:
-- Project name (currently): `my_new_project`
+- Project name (currently): `dbt_project.yml`
 - Profile: `default`
 - Materializations:
   - `models/staging`: views
