@@ -121,19 +121,6 @@ Tests are declared in `models/schema.yml` for:
 
 ---
 
-## Notes / TODOs (recommended cleanup)
-
-A few naming inconsistencies exist in the raw fields and are handled in staging:
-- campaign name appears as `campgn_name` in raw and is renamed to `campaign_name`
-- product purchase price appears as `purchse_price` and is renamed to `purchase_price`
-- shipping log cost appears as `logcost` and is renamed to `log_cost`
-
-You may also want to update:
-- `name:` in `dbt_project.yml` from `my_new_project` to something repo-specific (ex: `gz_dbt_repository`)
-- the dbt profile name from `default` to your team’s convention
-
----
-
 ## How to contribute
 
 1. Create a new branch
